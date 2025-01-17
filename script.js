@@ -59,7 +59,7 @@ let drugiInput1 = Number(drugiInput.value);
             rezultat.value = rez    
         }
         else{
-            rezultat.value = "Unos nije validan"
+            rezultat.value = "Unos nije validan!!"
         }
     }
 }
@@ -77,7 +77,7 @@ let drugiInput1 = Number(drugiInput.value);
             rezultat.value = rez    
         }
         else{
-            rezultat.value = "Unos nije validan"
+            rezultat.value = "Unos nije validan!!"
         }
     }
 }
@@ -99,7 +99,7 @@ let drugiInput1 = Number(drugiInput.value);
             }    
         }
         else{
-            rezultat.value = "Unos nije validan"
+            rezultat.value = "Unos nije validan!!"
         }
     }
 }
