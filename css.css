@@ -1,0 +1,101 @@
+#DivOmotac {
+    width: 500px;
+    height: 200px;
+    display: flex;
+
+}
+/* LEVA STRANA Kalkulatora*/
+#DivAritZnaci {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(186, 185, 185);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.AritZnak {
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+#AritZnakP {       /* plus */
+    background-color: rgb(94, 94, 250);
+}
+
+#AritZnakM {      /* minus */
+    background-color: red;
+}
+
+#AritZnakMn {    /* mnozenje */
+    background-color: green;
+}
+
+#AritZnakD {    /* deljenje */
+    background-color: yellow;
+}
+
+
+
+/* DESNA STRANA Kalkulatora*/
+#DivIspisUpis{
+    width: 300px;
+    height: 200px;
+    background-color: rgb(179, 123, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+img {
+    width: 15px;
+    height: 15px;
+}
+
+.OmotaciIspisaInputa {
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.OmotaciIspisaInputa input {
+    text-align: right;
+}
+
+.DivIzabraniAritZnak {
+    width: 16px;
+    height: 16px;
+    border: 1px dashed white;
+}
+
+#IspisID {
+    width: 170px;
+    height: 15px;
+}
+
+#Kao { /*AKTIVIRAJ OVO KAKO BI PRVU KOCKICU IZBRISAO*/
+    width: 16px;
+    height: 16px;
+    border: 1px dashed  rgb(179, 123, 251);
+}
+
+#linija{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Jednako {
+    width: 16px;
+    height: 16px;
+    color: white;
+    margin-top: 5px;
+}
