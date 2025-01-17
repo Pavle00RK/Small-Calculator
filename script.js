@@ -13,7 +13,7 @@ document.getElementById("AritZnakD").addEventListener("click", provera)
 function provera(e){
     let klik = e.currentTarget
     if (prviInput.value.trim() === "" || drugiInput.value.trim() === "") {
-         rezultat.value = "Unos nije validan!"
+         rezultat.value = "Unos nije validan!!!"
     } else {
         if (klik.id === "AritZnakP") {
             sumiranje();
