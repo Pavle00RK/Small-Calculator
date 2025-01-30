@@ -3,29 +3,24 @@ let drugiInput = document.getElementById("DrugiInputID");
 let operacija = document.getElementById("DivIzabraniAritZnakID");
 let rezultat = document.getElementById("IspisID");
 
-document.getElementById("AritZnakP").addEventListener("click", provera)
-document.getElementById("AritZnakM").addEventListener("click", provera)
-document.getElementById("AritZnakMn").addEventListener("click", provera)
-document.getElementById("AritZnakD").addEventListener("click", provera)
 
+//stravljanje eListenere na odredjene elemente, koji se pokrecu klikom na njih 
+document.getElementById("AritZnakP").addEventListener("click", ()=>{
+    sumiranje()
+})
 
-//Provera da li je u input uneta neka vrednost, ako jeste tek onda se izvrsava zeljena operacija
-function provera(e){
-    let klik = e.currentTarget
-    if (prviInput.value.trim() === "" || drugiInput.value.trim() === "") {
-         rezultat.value = "Unos nije validan!!!"
-    } else {
-        if (klik.id === "AritZnakP") {
-            sumiranje();
-        } else if (klik.id === "AritZnakM") {
-            oduzimanje();
-        } else if (klik.id === "AritZnakMn") {
-            mnozenje();
-        } else if (klik.id === "AritZnakD") {
-            deljenje();
-        }
-    }
-}
+document.getElementById("AritZnakM").addEventListener("click", ()=>{
+    oduzimanje()
+})
+
+document.getElementById("AritZnakMn").addEventListener("click", ()=>{
+    mnozenje()
+})
+
+document.getElementById("AritZnakD").addEventListener("click", ()=>{
+    deljenje()
+})
+
 
 // Funkcije za brisanje. 
 document.getElementById("PrvaGumica").addEventListener("click", () => { prviInput.value = ""; });
@@ -33,73 +28,61 @@ document.getElementById("DrugaGumica").addEventListener("click", () => { drugiIn
 document.getElementById("TrecaGumica").addEventListener("click", () => { rezultat.value = ""; });
 
 
+
+
+
+
+
+
+//funkcije za obavljanje aritmetickih operacija
 function sumiranje(){
     operacija.textContent = "+";
-    let prviInput1 = Number(prviInput.value);
-    let drugiInput1 = Number(drugiInput.value);
-
-    if (isNaN(prviInput1) || isNaN(drugiInput1)) {
-        console.log("UNOS NIJE VALIDAN");
-    }
-    else{  
-        rezultat.value = prviInput1 + drugiInput1;
-    }
+    let prviInput1 = prviInput.value;
+    let drugiInput1 = drugiInput.value;
+        if (prviInput1.trim() === "" || drugiInput1.trim() === "") {
+            rezultat.value = "Unos nije validan";
+        }
+        else{
+            let rez = Number(prviInput1) + Number(drugiInput1); 
+            rezultat.value = rez;
+        }
 }
 
 function oduzimanje(){
     operacija.textContent = "-";
-    let prviInput1 = Number(prviInput.value);
-let drugiInput1 = Number(drugiInput.value);
-    if (isNaN(prviInput1) && isNaN(drugiInput1)) {
-        console.log("UNOS NIJE VALIDAN");
+    let prviInput1 = prviInput.value;
+    let drugiInput1 = drugiInput.value;
+    if (prviInput1.trim() === "" || drugiInput1.trim() === "") {
+        rezultat.value = "Unos nije validan";
     }
     else{
-        let rez = prviInput1 - drugiInput1 
-        if (!isNaN(rez)) {
-            rezultat.value = rez    
-        }
-        else{
-            rezultat.value = "Unos nije validan!!"
-        }
+        let rez = Number(prviInput1) - Number(drugiInput1) ;
+        rezultat.value = rez ;   
     }
 }
 
 function mnozenje(){
     operacija.textContent = "x";
-    let prviInput1 = Number(prviInput.value);
-let drugiInput1 = Number(drugiInput.value);
-    if (isNaN(prviInput1) && isNaN(drugiInput1)) {
-        console.log("UNOS NIJE VALIDAN");
+    let prviInput1 = prviInput.value;
+    let drugiInput1 = drugiInput.value;
+    if (prviInput1.trim() === "" || drugiInput1.trim() === "") {
+        rezultat.value = "Unos nije validan";
     }
     else{
-        let rez = prviInput1 * drugiInput1 
-        if (!isNaN(rez)) {
-            rezultat.value = rez    
-        }
-        else{
-            rezultat.value = "Unos nije validan!!"
-        }
+        let rez = Number(prviInput1) * Number(drugiInput1) ;
+        rezultat.value = rez  ;  
     }
 }
 
 function deljenje(){
     operacija.textContent = ":";
-    let prviInput1 = Number(prviInput.value);
-let drugiInput1 = Number(drugiInput.value);
-    if (isNaN(prviInput1) && isNaN(drugiInput1)) {
-        console.log("UNOS NIJE VALIDAN");
+    let prviInput1 = prviInput.value;
+    let drugiInput1 = drugiInput.value;
+    if (prviInput1.trim() === "" || drugiInput1.trim() === "") {
+        rezultat.value = "Unos nije validan";
     }
     else{
-        let rez = prviInput1 / drugiInput1 
-        if (!isNaN(rez)) {
-            if (!isFinite(rez)) {
-                rezultat.value = 0  
-            } else {
-                rezultat.value = rez
-            }    
-        }
-        else{
-            rezultat.value = "Unos nije validan!!"
-        }
+        let rez = Number(prviInput1) / Number(drugiInput1); 
+        rezultat.value = rez;    
     }
 }
